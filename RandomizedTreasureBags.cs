@@ -29,6 +29,13 @@ namespace RandomizedTreasureBags
 		{
 			BagConfig cfg = BagConfig.Get;
 			IEntitySource source = self.GetItemSource_OpenItem(type);
+			const string bossBag = "bossBag";
+
+			if (cfg.UseTmlMethods && !ItemLoader.PreOpenVanillaBag(bossBag, self, type))
+				return;
+			
+			if (cfg.UseTmlMethods)
+				ItemLoader.OpenVanillaBag(bossBag, self, type);
 
 			int itemAmount = Main.rand.Next(cfg.MinimumItems, cfg.MaximumItems + 1);
 
@@ -38,9 +45,16 @@ namespace RandomizedTreasureBags
 					Main.rand.Next(ItemID.DirtBlock, ItemLoader.ItemCount),
 					Main.rand.Next(cfg.MinimumStack, cfg.MaximumStack)
 				);
-			
-			if (cfg.DropDevArmor)
+
+			int irrelevant = 0;
+			if (cfg.UseTmlMethods)
+				ItemLoader.OpenBossBag(type, self, ref irrelevant);
+
+			if (cfg.DropDevArmor && ItemID.Sets.BossBag[type] && (!ItemID.Sets.PreHardmodeLikeBossBag[type] || Main.tenthAnniversaryWorld))
 				self.TryGettingDevArmor(source);
+			
+			// if (cfg.UseTmlMethods)
+			NPCLoader.blockLoot.Clear();
 		}
 	}
 }

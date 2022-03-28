@@ -106,5 +106,10 @@ namespace RandomizedTreasureBags
         [Tooltip("Allow treasure bags to still drop developer armor sets.")]
         [DefaultValue(true)]
         public bool DropDevArmor { get; set; } = true;
+
+        [Label("Call tModLoader Methods")]
+        [Tooltip("Call tModLoader's methods for handling modded content.\nThis may cause regular items to be dropped.")]
+        [DefaultValue(false)]
+        public bool UseTmlMethods { get; set; } = false;
     }
 }
