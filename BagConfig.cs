@@ -20,6 +20,8 @@ namespace RandomizedTreasureBags
 
         #endregion
 
+        #region Item Count
+
         [Header("Range Configuration")]
         [Label("Maximum Item Count")]
         [DefaultValue(10)]
@@ -54,7 +56,11 @@ namespace RandomizedTreasureBags
                 minimumItems = value;
             }
         }
-        
+
+        #endregion
+
+        #region Stack
+
         [Label("Maximum Stack Count")]
         [DefaultValue(50)]
         [Range(1, 50)]
@@ -88,5 +94,12 @@ namespace RandomizedTreasureBags
                 minimumStack = value;
             }
         }
+
+        #endregion
+
+        [Header("Misc. Options")]
+        [Label("Drop Dev. Armor")]
+        [DefaultValue(true)]
+        public bool DropDevArmor { get; set; } = true;
     }
 }
