@@ -1,0 +1,3 @@
+This mod randomizes the loot dropped from Treasure Bags. A config is provided for the maximum and minimum item stacks and the maximum and minimum amount of different items a Treasure Bag can produce. The config is server-side.
+
+Made as a commission for mars#3486 -- thanks!

@@ -1,0 +1,3 @@
+displayName = Randomized Treasure Bag Loot
+author = Tomat
+version = 1.0.0
