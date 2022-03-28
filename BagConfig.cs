@@ -23,6 +23,7 @@ namespace RandomizedTreasureBags
         #region Item Count
 
         [Header("Range Configuration")]
+        [Tooltip("The maximum amount of items a treasure bag may drop.")]
         [Label("Maximum Item Count")]
         [DefaultValue(10)]
         [Range(1, 50)]
@@ -41,6 +42,7 @@ namespace RandomizedTreasureBags
         }
         
         [Label("Minimum Item Count")]
+        [Tooltip("The minimum amount of items a treasure bag may drop.")]
         [DefaultValue(5)]
         [Range(1, 50)]
         [Slider]
@@ -62,6 +64,7 @@ namespace RandomizedTreasureBags
         #region Stack
 
         [Label("Maximum Stack Count")]
+        [Tooltip("The maximum stack count an item may have when dropped.")]
         [DefaultValue(50)]
         [Range(1, 50)]
         [Slider]
@@ -79,6 +82,7 @@ namespace RandomizedTreasureBags
         }
         
         [Label("Minimum Stack Count")]
+        [Tooltip("The minimum stack count an item may have when dropped.")]
         [DefaultValue(5)]
         [Range(1, 50)]
         [Slider]
@@ -99,6 +103,7 @@ namespace RandomizedTreasureBags
 
         [Header("Misc. Options")]
         [Label("Drop Dev. Armor")]
+        [Tooltip("Allow treasure bags to still drop developer armor sets.")]
         [DefaultValue(true)]
         public bool DropDevArmor { get; set; } = true;
     }
