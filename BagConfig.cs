@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
@@ -111,5 +113,13 @@ namespace RandomizedTreasureBags
         [Tooltip("Call tModLoader's methods for handling modded content.\nThis may cause regular items to be dropped.")]
         [DefaultValue(false)]
         public bool UseTmlMethods { get; set; } = false;
+
+        public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
+        {
+            message = "NOTICE: When saving, the dummy config might mess up if you modified sliders." +
+                      "\nPlease know that even if the sliders reset, your changes were saved!";
+            
+            return base.AcceptClientChanges(pendingConfig, whoAmI, ref message);
+        }
     }
 }
