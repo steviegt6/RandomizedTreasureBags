@@ -114,6 +114,12 @@ namespace RandomizedTreasureBags
         [DefaultValue(false)]
         public bool UseTmlMethods { get; set; } = false;
 
+        [Label("Restrict Stack Size")]
+        [Tooltip(
+            "Restrict dropped item stack sizes to the item's max stack. Helps with things like armor and weapons.")]
+        [DefaultValue(true)]
+        public bool RestrictStacKSize { get; set; } = true;
+
         public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
         {
             message = "NOTICE: When saving, the dummy config might mess up if you modified sliders." +

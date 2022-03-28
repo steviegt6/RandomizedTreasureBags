@@ -40,11 +40,16 @@ namespace RandomizedTreasureBags
 			int itemAmount = Main.rand.Next(cfg.MinimumItems, cfg.MaximumItems + 1);
 
 			for (int i = 0; i < itemAmount; i++)
-				self.QuickSpawnItem(
-					source,
-					Main.rand.Next(ItemID.DirtBlock, ItemLoader.ItemCount),
-					Main.rand.Next(cfg.MinimumStack, cfg.MaximumStack)
-				);
+			{
+				int newType = Main.rand.Next(ItemID.DirtBlock, ItemLoader.ItemCount);
+				int newStack = Main.rand.Next(cfg.MinimumStack, cfg.MaximumStack);
+				Item sample = ContentSamples.ItemsByType[newType];
+
+				if (newStack > sample.maxStack && cfg.RestrictStacKSize)
+					newStack = sample.maxStack;
+				
+				self.QuickSpawnItem(source, newType, newStack);
+			}
 
 			int irrelevant = 0;
 			if (cfg.UseTmlMethods)
