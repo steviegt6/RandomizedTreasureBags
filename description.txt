@@ -1,3 +1,5 @@
 This mod randomizes the loot dropped from Treasure Bags. A config is provided for the maximum and minimum item stacks and the maximum and minimum amount of different items a Treasure Bag can produce. The config is server-side.
 
 Made as a commission for mars#3486 -- thanks!
+
+Additional note: this is the mod used in Mars' video "Terraria 2v2 Race, But Treasure Bags Give Random Items..". This mod was only released after the video's release as per Mars' request.
