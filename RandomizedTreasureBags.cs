@@ -28,7 +28,7 @@ namespace RandomizedTreasureBags
 		)
 		{
 			BagConfig cfg = BagConfig.Get;
-			IEntitySource source = self.GetItemSource_OpenItem(type);
+			IEntitySource source = self.GetSource_OpenItem(type);
 			const string bossBag = "bossBag";
 
 			if (cfg.UseTmlMethods && !ItemLoader.PreOpenVanillaBag(bossBag, self, type))
